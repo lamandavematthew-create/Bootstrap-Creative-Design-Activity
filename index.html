@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulating Tradition</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', Arial, sans-serif;
+            background-color: #fffaf3;
+            color: #3b3b3b;
+        }
+
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url("https://fotomoto.ph/cdn/shop/files/Bulating_Mud_and_Vine_People_of_Boac_Marinduque.jpg?v=1762703360&width=1445") center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1.2s forwards;
+        }
+
+        .hero-content h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            color: #f0e6d2;
+            text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-content p {
+            font-family: 'Lato', sans-serif;
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: #f0e6d2;
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content .btn-light {
+            font-family: 'Lato', sans-serif;
+            background-color: #f0e6d2;
+            color: #2b1a0f;
+            font-weight: bold;
+            padding: 0.8rem 2rem;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        .hero-content .btn-light:hover {
+            background-color: #e0d2b0;
+        }
+
+        section {
+            padding: 60px 0;
+            font-size: 20px;
+        }
+
+        section h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 70px;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .container{
+            max-width:1100px;
+        }
+        #about {
+            background: #fffaf3; 
+            color: #3b3b3b;
+        }
+
+        #gallery {
+            background: #fffefe; 
+            color: #3b3b3b;
+        }
+
+        #community {
+            background: #d6d3d3;
+            color: #3b3b3b;
+        }
+
+        .card img {
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card {
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 400px;        
+            object-fit: cover;    
+            object-position: center center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .carousel-inner{
+            border-radius:12px;
+            overflow:hidden;
+        }
+
+        .btn-primary {
+            background-color: #242424;
+            border-color: #242424;
+            transition:0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #a09e9e;
+            border-color: #242424;
+            transform:scale(1.05);
+        }
+
+        .btn-success {
+            background-color: #003300;
+            border-color: #242424;
+        }
+
+        .btn-success:hover {
+            background-color: #242424;
+            border-color: #242424;
+        }
+
+        footer {
+            background-color: #242424;
+            color: #f2e6dc;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bulating</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#community">Community</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>The Tradition of Bulating</h1>
+            <p>A sacred cultural ritual celebrated in Malbog, Boac, Marinduque, reflecting devotion, community, and heritage.</p>
+            <a href="#about" class="btn btn-light btn-lg">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Bulating</h2>
+            <p class="text-center">
+                Bulating is a unique and sacred tradition celebrated in Malbog, Boac, Marinduque during Holy Week, my home community, which is why I chose this as the theme of my page. Participants cover themselves in mud and adorn their bodies with leaves and natural materials, symbolizing humility, purification, and devotion. This ritual is not only a spiritual offering but also a test of endurance and faith, reflecting the strong religious beliefs of the community.
+
+                Passed down through generations, Bulating is a living expression of cultural identity. The mud-covered processions, playful yet solemn interactions among participants, and the shared experience of the ritual create a sense of unity and belonging. It reminds locals of their roots and the importance of preserving ancestral customs for future generations.
+
+                Beyond its spiritual significance, Bulating is a celebration of community, resilience, and heritage. The laughter, camaraderie, and collective participation highlight the strength and creativity of the people of Malbog. Through this ritual, the community honors its traditions while teaching younger generations to appreciate their history, faith, and cultural richness.
+
+                Bulating is more than a ritual, it is a vibrant, unforgettable part of Marinduque’s cultural heritage, connecting people through faith, culture, and shared human experience.
+            </p>    
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2>Photo Highlights</h2>
+            <div id="bulatingCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://2.bp.blogspot.com/_oJBgQcdkYqM/TTvWqUp3_eI/AAAAAAAACxk/UJh3ejENisY/s1600/DSC_0874.JPG" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://4.bp.blogspot.com/_oJBgQcdkYqM/TCL8u5Cgq4I/AAAAAAAACKE/2dwffuvNT5M/s1600/DSC_0884.JPG" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://kritikakulturaorg.files.wordpress.com/2021/10/culturalperf__bulating_photo10_boac_marinduque_region4b_april_eidrproject2_devotionalpractice.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://kritikakulturaorg.files.wordpress.com/2021/10/culturalperf__bulating_photo12_boac_marinduque_region4b_april_eidrproject2_devotionalpractice.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://marinduquenews.com/wp-content/uploads/2019/04/Bulating-Malbog-Boac-Marinduque_Moriones-Lenten-Rites-2019-2-840x473.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://marinduquenews.com/wp-content/uploads/2019/04/Bulating-Malbog-Boac-Marinduque_Moriones-Lenten-Rites-2019-1-840x473.jpg" class="d-block w-100">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://3.bp.blogspot.com/_oJBgQcdkYqM/TTvW-_Q65NI/AAAAAAAACxs/BUilBQQAYfg/s1600/boling2.bmp" class="d-block w-100">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#bulatingCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#bulatingCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+
+        <div class="container">
+            <p class="text-center">
+              Pictures taken about bulating
+            </p>
+        </div>
+    </section>
+
+    <section>
+    <div class="container">
+        <h2>More about the Bulating Tradition</h2>
+        <div class="row">
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/bulating4.JPG" class="card-img-top" alt="Origin of Bulating">
+                    <div class="card-body">
+                        <h5 class="card-title">Origin of Bulating</h5>
+                        <p class="card-text">
+                            The Bulating tradition began in Barangay Malbog, Boac, as a form of panata or religious vow.
+                            Over the years, it has grown into a recognized cultural practice that reflects the deep faith
+                            and devotion of the local community during Holy Week.
+                        </p>
+                        <button class="btn btn-primary">View More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgi5ps-EGDu2Na5EG4RkUU54vE1f3Rg-tu7wX7zypy7teGP85-p_wFbQZeTCjIw_2DiC1IQ45eWGZ0RVtDWYM3diXeyRAIh3lfsX6jfGEEVhYr9NYwBF0rnrhlO2mSvHEwYZn1EqkZfVwc/s1600/DSC_0315.JPG" class="card-img-top" alt="About Malbog">
+                    <div class="card-body">
+                        <h5 class="card-title">About Malbog</h5>
+                        <p class="card-text">
+                            Malbog is a barangay in the municipality of Boac, Marinduque. Known for its rich traditions
+                            and strong sense of community, it is the place where the Bulating ritual continues to be
+                            practiced and preserved by locals.
+                        </p>
+                        <button class="btn btn-primary">View More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="images/bulating6.jpg" class="card-img-top" alt="Meaning of Bulating">
+                    <div class="card-body">
+                        <h5 class="card-title">Meaning of Bulating</h5>
+                        <p class="card-text">
+                            Participants cover themselves with mud and decorate their bodies with leaves.
+                            This act symbolizes humility, purification, and a form of sacrifice offered as
+                            devotion during the Lenten season.
+                        </p>
+                        <button class="btn btn-primary">View More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://tanghal-kultura.org/wp-content/uploads/2021/10/culturalperf__bulating_photo6_boac_marinduque_region4b_april_eidrproject2_devotionalpractice.jpg?w=2048" class="card-img-top" alt="Preparation">
+                    <div class="card-body">
+                        <h5 class="card-title">Preparation</h5>
+                        <p class="card-text">
+                            Before the procession begins, participants gather mud from nearby areas and prepare
+                            their decorations using leaves, vines, and branches. These natural elements create
+                            the distinctive appearance of the Bulating participants.
+                        </p>
+                        <button class="btn btn-primary">View More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://hicaps.com.ph/wp-content/uploads/2023/04/when-is-moriones-festival-celebrated.jpg" class="card-img-top" alt="Holy Week Ritual">
+                    <div class="card-body">
+                        <h5 class="card-title">Holy Week Ritual</h5>
+                        <p class="card-text">
+                            Bulating usually takes place during Holy Week, where participants walk through
+                            the community covered in mud. The ritual reflects a solemn yet lively expression
+                            of faith shared by families and neighbors.
+                        </p>
+                        <button class="btn btn-primary">View More</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="https://i.ytimg.com/vi/sImKtOVlxSA/maxresdefault.jpg" class="card-img-top" alt="Cultural Heritage">
+                    <div class="card-body">
+                        <h5 class="card-title">Cultural Heritage</h5>
+                        <p class="card-text">
+                            Today, Bulating is recognized as an important part of Marinduque’s cultural identity.
+                            It continues to attract attention from visitors and researchers while remaining
+                            a cherished tradition of the people of Malbog.
+                        </p>
+                        <button class="btn btn-primary">View More</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    
+    <section id="community">
+
+    <div class="container">
+
+        <h2 class="text-center mb-5">Community Message</h2>
+
+        <div class="row align-items-center">
+
+            
+            <div class="col-md-5">
+
+                <h4>Share Your Bulating Experience</h4>
+
+                <p>
+                    The Bulating tradition is an important part of our community
+                    and culture. If you have stories, memories, or experiences
+                    during this Holy Week tradition, feel free to share them.
+                </p>
+
+                <p>
+                    Your message helps keep the spirit of Bulating alive and
+                    allows others to appreciate this unique local tradition.
+                </p>
+
+            </div>
+
+
+           
+            <div class="col-md-7">
+
+                <form class="p-4 bg-white rounded shadow">
+
+                    <div class="mb-3">
+                        <label class="form-label">Name</label>
+                        <input type="text" class="form-control" placeholder="Your name">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" placeholder="Your email">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" rows="3" placeholder="Share your thoughts..."></textarea>
+                    </div>
+
+                    <button class="btn btn-dark w-100">Send Message</button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <footer class="text-center p-4">
+        <p>Celebrating the Bulating Tradition</p>
+        <p>© 2026 Cultural Heritage Project</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
